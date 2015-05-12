@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+<div class="home">
+  <h1 class="page-heading">Index</h1>
+
+  <ul class="isotope">
+    {% for post in site.posts %}
+      <li>
+        <h2 class="post-title">
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+        <p class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</p>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+
+<script>
+  $(function() {
+    $('.isotope').isotope({
+      masonry: {
+        columnWidth: 320
+      }
+    });
+  });
+</script>

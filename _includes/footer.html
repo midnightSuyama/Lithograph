@@ -1,0 +1,19 @@
+<footer class="site-footer single-column">
+  <div class="clearfix">
+    <div class="left">
+      <small>&copy; {{ site.time | date: "%Y" }} {{ site.author }}, Powered by <a href="http://jekyllrb.com" target="_blank">jekyll</a> &amp; <a href="https://github.com/midnightSuyama/Lithograph" target="_blank">Lithograph</a></small>
+    </div>
+
+    <div class="right">
+      {% if site.twitter_username %}
+      <a href="https://twitter.com/{{ site.twitter_username }}" target="_blank" class="icon-twitter muted-link"><i class="fa fa-twitter fa-2x"></i></a>
+      {% endif %}
+
+      {% if site.github_username %}
+      <a href="https://github.com/{{ site.github_username }}" target="_blank" class="icon-github muted-link"><i class="fa fa-github fa-2x"></i></a>
+      {% endif %}
+
+      <a href="{{ "/feed.xml" | prepend: site.baseurl }}" target="_blank" class="icon-rss muted-link"><i class="fa fa-rss fa-2x"></i></a>
+    </div>
+  </div>
+</footer>

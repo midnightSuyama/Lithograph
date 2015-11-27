@@ -8,10 +8,11 @@ layout: default
   <ul class="isotope">
     {% for post in site.posts %}
       <li>
-        <h2 class="post-title">
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-        <p class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</p>
+        <a class="post-link" href="{% if post.link %}{{ post.link }}{% else %}{{ post.url | prepend: site.baseurl }}{% endif %}">
+          <img src="{{ post.image }}">
+          <h2 class="post-title">{{ post.title }}</h2>
+          <p class="post-description">{{ post.description }}</p>
+        </a>
       </li>
     {% endfor %}
   </ul>
@@ -21,7 +22,9 @@ layout: default
   $(function() {
     $('.isotope').isotope({
       masonry: {
-        columnWidth: 320
+        columnWidth: 160,
+        gutter: 20,
+        isFitWidth: true
       }
     });
   });
